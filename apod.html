@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello Universe</h1>
+    <div id="name"></div>
+  <img id="picture">
+    <script>
+        fetch("https://api.nasa.gov/planetary/apod?api_key=dOr3Qci4WaEEEbzw18Ug0TgWmxezQcmL6Y8Cdqea")
+        .then((data) => {
+            console.log(data)
+            return data.json()
+        }).then((data) => {
+            // console.log(data.title)            
+            // console.log(data.hdurl)
+            document.getElementById("name").innerHTML = data.title
+            document.getElementById("picture").src = data.hdurl
+        }) 
+    </script>
+</body>
+</html>
