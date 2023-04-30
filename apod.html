@@ -17,9 +17,9 @@
             return data.json()
         }).then((data) => {
             // console.log(data.title)            
-            // console.log(data.hdurl)
+            // console.log(data.url)
             document.getElementById("name").innerHTML = data.title
-            document.getElementById("picture").src = data.hdurl
+            document.getElementById("picture").src = data.url
         }) 
     </script>
 </body>
